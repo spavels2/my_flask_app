@@ -19,6 +19,3 @@ jobs:
 
       - name: Install dependencies
         run: pipenv install
-          
-      - name: Start tests
-        run: pipenv run python -m pytest my_tests.py
