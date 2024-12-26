@@ -16,6 +16,10 @@ jobs:
 
       - name: Install pipenv
         run: python -m pip install pipenv
+        
+      - name: Pipenvsync
+        run: |
+          pipenv sync
 
       - name: Install dependencies
         run: pipenv install
