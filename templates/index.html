@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение изображения</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body class = "index_body">
+    <div class="container">
+        <h1>Изменение изображения</h1>
+        <form method="POST" enctype="multipart/form-data">
+          <div class="captcha-container">
+            <div class="g-recaptcha" data-sitekey="6Lcv66MqAAAAAI24qN5nol3IVIyljRpjYsQEttkA"></div>
+          </div>
+        </form>
+
+        <form action="/modify" method="post" enctype="multipart/form-data">
+            <label for="image">Выберите изображение:</label>
+            <input type="file" name="image" required>
+            <br>
+            <label for="stripe_width">Ширина полосы:</label>
+            <input type="number" name="stripe_width" min="1" required>
+            <br>
+            <label for="orientation">Ориентация:</label>
+            <select name="orientation">
+                <option value="horizontal">Горизонтально</option>
+                <option value="vertical">Вертикально</option>
+            </select>
+            <br>
+            <input type="submit" value="Изменить изображение">
+        </form>
+        <!--{% if modified_image %}
+            <h2>Измененное изображение:</h2>
+            <img src="{{ url_for('static', filename='modified_image.png') }}" alt="Измененное изображение">
+            <h2>График распределения цветов:</h2>
+            <img src="{{ url_for('static', filename='color_distribution.png') }}" alt="График распределения цветов">
+        {% endif %}-->
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>
+
