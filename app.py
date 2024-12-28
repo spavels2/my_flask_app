@@ -4,6 +4,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from asgiref.wsgi import WsgiToAsgi
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -89,6 +90,8 @@ def modify_image():
     plt.close()
 
     return redirect(url_for('result', image_path=modified_image_path))
+    
+asgi_app = WsgiToAsgi(app)
 
 if __name__ == '__main__':
     app.run(debug=True)

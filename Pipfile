@@ -13,6 +13,7 @@ numpy = "*"
 Pillow = "*"
 python-multipart = "*"
 flask = "*"
+asgiref = "*"
 flask-wtf = "*"
 matplotlib = "*"
 
