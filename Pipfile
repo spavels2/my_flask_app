@@ -13,6 +13,7 @@ numpy = "*"
 Pillow = "*"
 python-multipart = "*"
 flask = "*"
+flask-wtf = "*"
 
 [dev-packages]
 [requires]
