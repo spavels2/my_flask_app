@@ -14,6 +14,7 @@ Pillow = "*"
 python-multipart = "*"
 flask = "*"
 flask-wtf = "*"
+matplotlib = "*"
 
 [dev-packages]
 [requires]
