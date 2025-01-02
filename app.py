@@ -7,7 +7,6 @@ import os
 from asgiref.wsgi import WsgiToAsgi
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -16,7 +15,7 @@ def index():
         # Проверка капчи
         recaptcha_response = request.form['g-recaptcha-response']
         payload = {
-            'secret': '6Lcv66MqAAAAALZhIo7z8ZFRWAw6VReExs9lQ5Wl',
+            'secret': '6Lcc1qcqAAAAAEFLrcuK0UiE__D0oTEenOUrkEYp',
             'response': recaptcha_response
         }
         response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=payload)
