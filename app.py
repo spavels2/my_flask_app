@@ -22,7 +22,7 @@ def index():
         response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=payload)
         result = response.json()
 
-         if not result.get('success'):
+        if not result.get('success'):
             return render_template('index.html', form=form, error='Проверка на робота не пройдена.')
             
         # Обработка изображения
