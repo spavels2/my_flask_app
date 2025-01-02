@@ -7,6 +7,7 @@ import os
 from asgiref.wsgi import WsgiToAsgi
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '6Lcc1qcqAAAAAEFLrcuK0UiE__D0oTEenOUrkEYp'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
