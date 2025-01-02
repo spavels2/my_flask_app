@@ -23,8 +23,7 @@ def index():
         result = response.json()
 
          if not result.get('success'):
-            return render_template('index.html', form=form, error='Проверка на робота не пройдена. 
-                                    Ошибка: {}'.format(result.get('error-codes')))
+            return render_template('index.html', form=form, error='Проверка на робота не пройдена.')
             
         # Обработка изображения
         image_file = form.image.data
