@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = '6LeZK6wqAAAAABofHeiR71BblLC4WXTFEN6EKJ6z'
 def index():
     form = ImageForm()
     if form.validate_on_submit():
-        # Проверка капчи
+        # Проверка_капчи
         recaptcha_response = request.form['g-recaptcha-response']
         payload = {
             'secret': app.config['SECRET_KEY'],
