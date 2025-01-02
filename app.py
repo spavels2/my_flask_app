@@ -22,8 +22,9 @@ def index():
         response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=payload)
         result = response.json()
 
-        if not result.get('success'):
-            return render_template('index.html', form=form, error='Проверка на робота не пройдена.')
+         if not result.get('success'):
+            return render_template('index.html', form=form, error='Проверка на робота не пройдена. 
+                                    Ошибка: {}'.format(result.get('error-codes')))
             
         # Обработка изображения
         image_file = form.image.data
