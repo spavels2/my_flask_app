@@ -16,7 +16,7 @@ def index():
         # Проверка капчи
         recaptcha_response = request.form['g-recaptcha-response']
         payload = {
-            'secret': '6Lcc1qcqAAAAAEFLrcuK0UiE__D0oTEenOUrkEYp',
+            'secret': app.config['SECRET_KEY'],
             'response': recaptcha_response
         }
         response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=payload)
